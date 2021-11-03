@@ -39,4 +39,5 @@ target_link_libraries(${PROJECT}
     hwdll
 )
 
+# лМ╪свсд©б╪
 add_subdirectory(hwdll)

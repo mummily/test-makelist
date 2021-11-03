@@ -13,7 +13,7 @@ file(GLOB SOURCES *.cpp)
 
 # 编译预定义描述
 add_compile_definitions(
-    -DDLL_EXPORTS
+    DLL_EXPORTS
 )
 
 # 生成共享库文件
