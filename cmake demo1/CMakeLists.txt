@@ -1,10 +1,42 @@
+#[[ 说明：
+    1. 应用程序hwapp，库文件hwdll
+    2. hwapp中调用hwdll中的一个函数
+    3. 这个是一个简单的应用程序调用库文件的方法
+]]
+
 cmake_minimum_required(VERSION 3.10)
 
-project(hwApp)
+# 设置工程名
+set(PROJECT hwApp)
+project(${PROJECT})
 
-include_directories(./hwdll)
-add_executable(hwApp ./hwapp/main.cpp)
-target_link_libraries(hwApp hwdll)
+# 添加头文件包含目录
+include_directories(
+    ./hwdll
+)
 
+# 头文件描述
+set(HEADERS
+)
+
+# 源文件描述
+set(SOURCES
+    ./hwapp/main.cpp
+)
+
+# 生成应用文件
+add_executable(${PROJECT} 
+    ${HEADERS}
+    ${SOURCES}
+)
+
+#[[ TODO：
+    1. 依赖库路径如何描述
+]]
+
+# 依赖库描述
+target_link_libraries(${PROJECT} 
+    hwdll
+)
 
 add_subdirectory(hwdll)

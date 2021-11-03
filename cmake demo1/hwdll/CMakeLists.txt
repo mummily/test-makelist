@@ -1,9 +1,23 @@
+#[[ 说明：
+    1. 共享库文件hwdll
+    2. 导出一个函数供其它程序调用
+]]
+
 set(PROJECT hwdll)
 
-file(GLOB SOURCES *.cpp)
+# 头文件描述
 file(GLOB HEADERS *.h)
 
-add_compile_definitions(-DDLL_EXPORTS)
+# 源文件描述
+file(GLOB SOURCES *.cpp)
 
-# add the executable
-add_library(${PROJECT} SHARED ${HEADERS} ${SOURCES})
+# 编译预定义描述
+add_compile_definitions(
+    -DDLL_EXPORTS
+)
+
+# 生成共享库文件
+add_library(${PROJECT} SHARED 
+    ${HEADERS}
+    ${SOURCES}
+)
