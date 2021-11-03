@@ -7,8 +7,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # 设置工程名
-set(PROJECT hwApp)
-project(${PROJECT})
+project(hwApp)
 
 # 添加头文件包含目录
 include_directories(
@@ -25,17 +24,13 @@ set(SOURCES
 )
 
 # 生成应用文件
-add_executable(${PROJECT} 
+add_executable(${PROJECT_NAME} 
     ${HEADERS}
     ${SOURCES}
 )
 
-#[[ TODO：
-    1. 依赖库路径如何描述
-]]
-
 # 依赖库描述
-target_link_libraries(${PROJECT} 
+target_link_libraries(${PROJECT_NAME} 
     hwdll
 )
 
