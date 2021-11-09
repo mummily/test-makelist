@@ -1,3 +1,4 @@
 project(Test)
 
-add_executable(Test main.cpp print.cpp)
+# printmain.cpp中调用print.cpp中函数
+add_executable(Test printmain.cpp print.cpp)

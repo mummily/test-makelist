@@ -11,12 +11,12 @@
                 "-B",
                 "build",
                 "-A",
-                "win32"
+                "Win32"
             ]
         },
         {
             "label": "make",
-            "group":{
+            "group": {
                 "kind": "build",
                 "isDefault": true
             },
@@ -28,7 +28,7 @@
         },
         {
             "label": "MyBuild",
-            "dependsOn":[
+            "dependsOn": [
                 "cmake",
                 "make"
             ]
