@@ -11,7 +11,7 @@ project(hwApp2)
 
 # 添加头文件包含目录
 include_directories(
-    ../hwdll
+    ../hwApp1/hwdll
 )
 
 # 头文件描述

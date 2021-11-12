@@ -11,7 +11,7 @@ project(hwApp1)
 
 # 添加头文件包含目录
 include_directories(
-    ../hwdll
+    ./hwdll
 )
 
 # 头文件描述
@@ -33,3 +33,5 @@ add_executable(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME} 
     hwdll
 )
+
+add_subdirectory(hwdll)

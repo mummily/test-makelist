@@ -10,6 +10,5 @@ cmake_minimum_required(VERSION 3.10)
 project(hwApp)
 
 # 添加子目录
-add_subdirectory(hwdll)
 add_subdirectory(hwApp1)
 add_subdirectory(hwApp2)
