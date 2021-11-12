@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-	print();
+    print();
     getchar();
 
     return 0;

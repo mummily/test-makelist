@@ -1,22 +1,22 @@
-#[[ ËµÃ÷£º
-    1. ¹²Ïí¿âÎÄ¼þhwdll
-    2. µ¼³öÒ»¸öº¯Êý¹©ÆäËü³ÌÐòµ÷ÓÃ
+#[[ è¯´æ˜Žï¼š
+    1. å…±äº«åº“æ–‡ä»¶hwdll
+    2. å¯¼å‡ºä¸€ä¸ªå‡½æ•°ä¾›å…¶å®ƒç¨‹åºè°ƒç”¨
 ]]
 
 set(PROJECT hwdll)
 
-# Í·ÎÄ¼þÃèÊö
+# å¤´æ–‡ä»¶æè¿°
 file(GLOB HEADERS *.h)
 
-# Ô´ÎÄ¼þÃèÊö
+# æºæ–‡ä»¶æè¿°
 file(GLOB SOURCES *.cpp)
 
-# ±àÒëÔ¤¶¨ÒåÃèÊö
+# ç¼–è¯‘é¢„å®šä¹‰æè¿°
 add_compile_definitions(
     DLL_EXPORTS
 )
 
-# Éú³É¹²Ïí¿âÎÄ¼þ
+# ç”Ÿæˆå…±äº«åº“æ–‡ä»¶
 add_library(${PROJECT} SHARED 
     ${HEADERS}
     ${SOURCES}

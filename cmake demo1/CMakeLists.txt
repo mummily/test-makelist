@@ -1,38 +1,15 @@
-#[[ ËµÃ÷£º
-    1. Ó¦ÓÃ³ÌĞòhwapp£¬¿âÎÄ¼şhwdll
-    2. hwappÖĞµ÷ÓÃhwdllÖĞµÄÒ»¸öº¯Êı
-    3. Õâ¸öÊÇÒ»¸ö¼òµ¥µÄÓ¦ÓÃ³ÌĞòµ÷ÓÃ¿âÎÄ¼şµÄ·½·¨
+#[[ è¯´æ˜ï¼š
+    1. åº”ç”¨ç¨‹åºhwappï¼Œåº“æ–‡ä»¶hwdll
+    2. hwappä¸­è°ƒç”¨hwdllä¸­çš„ä¸€ä¸ªå‡½æ•°
+    3. è¿™ä¸ªæ˜¯ä¸€ä¸ªç®€å•çš„åº”ç”¨ç¨‹åºè°ƒç”¨åº“æ–‡ä»¶çš„æ–¹æ³•
 ]]
 
 cmake_minimum_required(VERSION 3.10)
 
-# ÉèÖÃ¹¤³ÌÃû
+# è®¾ç½®å·¥ç¨‹å
 project(hwApp)
 
-# Ìí¼ÓÍ·ÎÄ¼ş°üº¬Ä¿Â¼
-include_directories(
-    ./hwdll
-)
-
-# Í·ÎÄ¼şÃèÊö
-set(HEADERS
-)
-
-# Ô´ÎÄ¼şÃèÊö
-set(SOURCES
-    ./hwapp/main.cpp
-)
-
-# Éú³ÉÓ¦ÓÃÎÄ¼ş
-add_executable(${PROJECT_NAME} 
-    ${HEADERS}
-    ${SOURCES}
-)
-
-# ÒÀÀµ¿âÃèÊö
-target_link_libraries(${PROJECT_NAME} 
-    hwdll
-)
-
-# Ìí¼Ó×ÓÄ¿Â¼
+# æ·»åŠ å­ç›®å½•
 add_subdirectory(hwdll)
+add_subdirectory(hwApp1)
+add_subdirectory(hwApp2)
