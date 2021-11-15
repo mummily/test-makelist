@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <variant>
 
@@ -12,7 +12,7 @@ namespace Ino
         Variant(int i) : data(i) {}
         Variant(double d) : data(d) {}
         Variant(std::string s) : data(std::move(s)) {}
-        // ... ÆäËû¼òµ¥ÀàĞÍconstructor
+        // ... å…¶ä»–ç®€å•ç±»å‹constructor
         Variant(std::initializer_list<Variant> l) : data(std::move(l)) {}
 
         inline operator int() const
@@ -21,7 +21,7 @@ namespace Ino
                 return *p;
             return 0;
         }
-        // ... ÆäËû¼òµ¥ÀàĞÍoperator
+        // ... å…¶ä»–ç®€å•ç±»å‹operator
 
         std::variant<bool, int, double, std::string, std::initializer_list<Variant>> data;
     };
@@ -31,10 +31,10 @@ namespace Ino
 {
     struct NodeInfo
     {
-        string node;        // ½ÚµãÃèÊö
-        int type;           // ½ÚµãÊôĞÔ
-        Ino::Variant value; // Öµ
-        bool result;        // ½á¹û
+        string node;        // èŠ‚ç‚¹æè¿°
+        int type;           // èŠ‚ç‚¹å±æ€§
+        Ino::Variant value; // å€¼
+        bool result;        // ç»“æœ
     };
 }
 
@@ -42,11 +42,11 @@ namespace Ino
 {
     struct CallMethod
     {
-        string object;                          // ¶ÁÈ¡½Úµã
-        string method;                          // ¶ÁÈ¡½ÚµãÊôĞÔ
-        std::vector<Ino::Variant> inputparams;  // ÊäÈë²ÎÊı£¬Ä¬ÈÏÎª¿Õ
-        std::vector<Ino::Variant> outputparams; // Êä³ö²ÎÊı£¬Ä¬ÈÏÎª¿Õ
-        bool result;                            // ½á¹û
+        string object;                          // è¯»å–èŠ‚ç‚¹
+        string method;                          // è¯»å–èŠ‚ç‚¹å±æ€§
+        std::vector<Ino::Variant> inputparams;  // è¾“å…¥å‚æ•°ï¼Œé»˜è®¤ä¸ºç©º
+        std::vector<Ino::Variant> outputparams; // è¾“å‡ºå‚æ•°ï¼Œé»˜è®¤ä¸ºç©º
+        bool result;                            // ç»“æœ
     };
 }
 

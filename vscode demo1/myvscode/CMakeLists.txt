@@ -1,8 +1,8 @@
-project(Test)
+ï»¿project(Test)
 set(CMAKE_CXX_STANDARD 17)
 
-# printmain.cppÖĞµ÷ÓÃprint.cppÖĞº¯Êı
+# printmain.cppä¸­è°ƒç”¨print.cppä¸­å‡½æ•°
 # add_executable(Test printmain.cpp print.cpp)
 
-# variantµÄÊ¹ÓÃ
+# variantçš„ä½¿ç”¨
 add_executable(Test variantmain.cpp)

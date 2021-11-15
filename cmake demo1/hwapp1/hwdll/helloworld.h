@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #ifdef DLL_EXPORTS
 # define INO_EXPORT __declspec(dllexport)
