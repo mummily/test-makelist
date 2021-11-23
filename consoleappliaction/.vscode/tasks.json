@@ -9,9 +9,9 @@
             "command": "cmake",
             "args": [
                 "-B",
-                "build",
+                "${workspaceFolder}/build",
                 "-A",
-                "Win32"
+                "win32"
             ]
         },
         {
@@ -23,7 +23,9 @@
             "command": "cmake",
             "args": [
                 "--build",
-                "build"
+                "${workspaceFolder}/build",
+                "--config",
+                "Debug"
             ]
         },
         {
