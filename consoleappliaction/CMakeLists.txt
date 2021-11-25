@@ -32,9 +32,12 @@ set(CMAKE_CXX_STANDARD 17)
 #     rttr
 # )
 
+# ==== shared_mutex和mutex的性能对比 ========================
+# add_executable(${PROJECT_NAME} concurrency_parallel/shared_mutex_cmp_mutex.cpp)
+
 # ==== 并行parallel：同时做不同事情的能力 ===================
+# ==== parallel_invoke ==================================
 # add_executable(${PROJECT_NAME} concurrency_parallel/parallel_invoke.cpp)
 
-
-# ==== shared_mutex和mutex的性能对比 ========================
-add_executable(${PROJECT_NAME} concurrency_parallel/shared_mutex_cmp_mutex.cpp)
+# ==== parallel_for_each ==================================
+add_executable(${PROJECT_NAME} concurrency_parallel/parallel_for_each.cpp)

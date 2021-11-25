@@ -2,15 +2,15 @@
 #include <chrono>
 #include <iostream>
 
-class timers
+class timer
 {
 public:
-    timers()
+    timer()
     {
         m_begin = std::chrono::high_resolution_clock::now();
     }
 
-    ~timers()
+    ~timer()
     {
         m_end = std::chrono::high_resolution_clock::now();
         Consuming();

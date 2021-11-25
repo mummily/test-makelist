@@ -81,7 +81,7 @@ void test_shared_mutex()
     std::cout << "----- shared mutex test ------" << std::endl;
     std::list<std::shared_ptr<std::thread>> threadlist;
     {
-        timers timer;
+        timer t;
 
         for (int i = 0; i < READ_THREAD_COUNT; i++)
         {
@@ -122,7 +122,7 @@ void test_mutex()
     std::cout << "----- mutex test ------" << std::endl;
     std::list<std::shared_ptr<std::thread>> threadlist;
     {
-        timers timer;
+        timer t;
 
         for (int i = 0; i < READ_THREAD_COUNT; i++)
         {

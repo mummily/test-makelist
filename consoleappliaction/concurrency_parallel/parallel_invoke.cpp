@@ -10,13 +10,13 @@ void fun(int i)
 {
     for (int j = i - 10; j < i; j++)
     {
-        // cout << j << endl; // 线程不安全
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        
         // printf("%d\n", j); // 线程安全
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
-
+        // cout << j << endl; // 线程不安全
         lock_guard<shared_mutex> lock(mutex_);
-        cout << j << endl; // 线程不安全
+        cout << j << endl; // 加锁后线程安全
     }
 }
 
@@ -29,6 +29,7 @@ int main(int argc, char **argv)
     auto fun1 = std::bind(&fun, i1);
     auto fun2 = std::bind(&fun, i2);
     auto fun3 = std::bind(&fun, i3);
+
     Concurrency::parallel_invoke(
         fun1,
         fun2,
