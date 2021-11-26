@@ -8,7 +8,7 @@
             "name": "(Windows) 启动",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/Debug/Test.exe",
+            "program": "${workspaceFolder}/bin/debug/task_group.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

@@ -1,46 +1,38 @@
-﻿project(Test)
+﻿project(consoleappliaction)
 set(CMAKE_CXX_STANDARD 17)
 
-# ==== printmain.cpp中调用print.cpp中函数 =================
-# add_executable(${PROJECT_NAME} printmain.cpp print/print.cpp)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG "${PROJECT_SOURCE_DIR}/lib/debug")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE "${PROJECT_SOURCE_DIR}/lib/release")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG "${PROJECT_SOURCE_DIR}/bin/debug")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE "${PROJECT_SOURCE_DIR}/bin/release")
 
-# ==== variant的使用 =====================================
-# add_executable(${PROJECT_NAME} variantmain.cpp)
+# c++17 variant的使用
+add_executable(cpp17variant_test variantmain.cpp)
 
-# ==== fmt的使用 =========================================
-# add_executable(${PROJECT_NAME} fmtmain.cpp)
-# # 依赖库描述
-# target_link_libraries(${PROJECT_NAME} 
-#     fmt
-# )
-# add_subdirectory(
-#     ${CMAKE_CURRENT_SOURCE_DIR}/../../3rdparty/fmt
-#     fmt
-#)
+# fmt的使用
+add_executable(fmt_test fmtmain.cpp)
+target_link_libraries(fmt_test
+    fmt
+)
 
-# ==== operator->的使用 =================================
-# add_executable(${PROJECT_NAME} operatorptrmain.cpp)
+# operator->的使用
+add_executable(operatorptr_test operatorptrmain.cpp)
 
-# ==== rttr反射的基本使用 ================================
-# add_executable(${PROJECT_NAME} rttrmain.cpp)
-# # 依赖库描述
-# target_link_libraries(${PROJECT_NAME} 
-#     RTTR::Core
-# )
-# add_subdirectory(
-#     ${CMAKE_CURRENT_SOURCE_DIR}/../../3rdparty/rttr
-#     rttr
-# )
+# rttr反射的基本使用 
+add_executable(rttr_test rttrmain.cpp)
+target_link_libraries(rttr_test
+    RTTR::Core
+)
 
-# ==== shared_mutex和mutex的性能对比 ========================
-# add_executable(${PROJECT_NAME} concurrency_parallel/shared_mutex_cmp_mutex.cpp)
+# 并行parallel：同时做不同事情的能力
+add_subdirectory(concurrency_parallel)
 
-# ==== 并行parallel：同时做不同事情的能力 ===================
-# ==== parallel_invoke ==================================
-# add_executable(${PROJECT_NAME} concurrency_parallel/parallel_invoke.cpp)
+add_subdirectory(
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../3rdparty/fmt
+    fmt
+)
 
-# ==== parallel_for_each ==================================
-# add_executable(${PROJECT_NAME} concurrency_parallel/parallel_for_each.cpp)
-
-# ==== parallel_create_task ==================================
-add_executable(${PROJECT_NAME} concurrency_parallel/parallel_create_task.cpp)
+add_subdirectory(
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../3rdparty/rttr
+    rttr
+)
