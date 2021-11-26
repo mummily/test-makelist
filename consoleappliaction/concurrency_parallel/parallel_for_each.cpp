@@ -6,7 +6,7 @@
 using namespace std;
 
 /* mutable */ std::shared_mutex mutex_;
-void fun(int i)
+void print(int i)
 {
     for (int j = i - 10; j < i; j++)
     {
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
     {
         timer t;
         Concurrency::parallel_for_each(vec.begin(), vec.end(), [&](int i) -> void
-                                       { fun(i); });
+                                       { print(i); });
     }
 
     return 0;

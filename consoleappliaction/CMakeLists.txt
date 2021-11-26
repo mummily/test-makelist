@@ -40,4 +40,7 @@ set(CMAKE_CXX_STANDARD 17)
 # add_executable(${PROJECT_NAME} concurrency_parallel/parallel_invoke.cpp)
 
 # ==== parallel_for_each ==================================
-add_executable(${PROJECT_NAME} concurrency_parallel/parallel_for_each.cpp)
+# add_executable(${PROJECT_NAME} concurrency_parallel/parallel_for_each.cpp)
+
+# ==== parallel_create_task ==================================
+add_executable(${PROJECT_NAME} concurrency_parallel/parallel_create_task.cpp)
