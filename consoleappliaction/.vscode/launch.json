@@ -8,7 +8,7 @@
             "name": "(Windows) 启动",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/debug/task_group.exe",
+            "program": "${workspaceFolder}/bin/debug/parallel_for.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

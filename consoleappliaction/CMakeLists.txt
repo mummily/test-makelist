@@ -7,20 +7,20 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG "${PROJECT_SOURCE_DIR}/bin/debug")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE "${PROJECT_SOURCE_DIR}/bin/release")
 
 # c++17 variant的使用
-add_executable(cpp17variant_test variantmain.cpp)
+add_executable(cpp17variant variantmain.cpp)
 
 # fmt的使用
-add_executable(fmt_test fmtmain.cpp)
-target_link_libraries(fmt_test
+add_executable(fmttest fmtmain.cpp)
+target_link_libraries(fmttest
     fmt
 )
 
 # operator->的使用
-add_executable(operatorptr_test operatorptrmain.cpp)
+add_executable(operatorptr operatorptrmain.cpp)
 
 # rttr反射的基本使用 
-add_executable(rttr_test rttrmain.cpp)
-target_link_libraries(rttr_test
+add_executable(rttrtest rttrmain.cpp)
+target_link_libraries(rttrtest
     RTTR::Core
 )
 

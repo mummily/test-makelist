@@ -36,7 +36,7 @@ void sync()
                     return nums;
                 })
         .then([](vector<int> vec)
-              { Concurrency::parallel_for_each(vec.begin(), vec.end(), [&](int i) -> void
+              { parallel_for_each(vec.begin(), vec.end(), [&](int i) -> void
                                                { print(i); }); }
 
               )

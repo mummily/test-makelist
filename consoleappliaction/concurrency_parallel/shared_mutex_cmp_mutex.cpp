@@ -1,17 +1,13 @@
 ﻿#include <mutex>
-#include <shared_mutex>
 #include <thread>
 #include <list>
 #include <iostream>
 #include <vector>
+#include "../common/lock.h"
 #include "../common/timer.h"
 
 #define READ_THREAD_COUNT 8
 #define LOOP_COUNT 5000000
-
-typedef std::shared_lock<std::shared_mutex> ReadLock;
-typedef std::lock_guard<std::shared_mutex> WriteLock;
-typedef std::lock_guard<std::mutex> NormalLock;
 
 class shared_mutex_counter
 {
