@@ -17,7 +17,7 @@ void demo1()
         shared_mutex mutex;
         parallel_for(0, 10, [&](int i) -> void
                      {
-                         std::this_thread::sleep_for(std::chrono::seconds(1));
+                         sleep_for(std::chrono::seconds(1));
 
                          WriteLock lock(mutex);
                          vec.push_back({rand() % 100, rand() % 100});
@@ -34,12 +34,13 @@ void demo2()
     vec.push_back(1);
     vec.push_back(2);
     vec.push_back(4);
-    Concurrency::parallel_for(0, (int)vec.size(), [&](int i) -> void
-                              { printf("%d\n", vec.at(i)); });
+    parallel_for(0, (int)vec.size(), [&](int i) -> void
+                 { printf("%d\n", vec.at(i)); });
 }
 
 int main(int argc, char **argv)
 {
-    demo2();
+    timer t;
+    demo3();
     return 0;
 }

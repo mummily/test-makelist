@@ -18,7 +18,7 @@ public:
 
     void Consuming()
     {
-        std::cout << "Time-consuming:" << std::chrono::duration_cast<std::chrono::duration<float, std::milli>>(m_end - m_begin).count() << std::endl;
+        std::cout << "Time-consuming:" << std::chrono::duration_cast<std::chrono::duration<float, std::milli>>(m_end - m_begin).count() << "ms" << std::endl;
     }
 
 private:
